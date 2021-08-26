@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tracklist: one
+  track: one
+  cue_time: 2021-08-25 20:50:42
+  predessor_id: 
+  identifier: one
+
+two:
+  tracklist: two
+  track: two
+  cue_time: 2021-08-25 20:50:42
+  predessor_id: 
+  identifier: two
