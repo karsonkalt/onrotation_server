@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date_played: 2021-08-25
+  artist: one
+  soundcloud_track_id: MyString
+  creator: one
+
+two:
+  name: MyString
+  date_played: 2021-08-25
+  artist: two
+  soundcloud_track_id: MyString
+  creator: two
