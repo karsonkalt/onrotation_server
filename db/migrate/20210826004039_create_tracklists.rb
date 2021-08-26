@@ -5,7 +5,7 @@ class CreateTracklists < ActiveRecord::Migration[6.1]
       t.date :date_played
       t.references :artist, null: false, foreign_key: true
       t.string :soundcloud_track_id
-      t.references :creator, references: :users, null: false, foreign_key: true
+      t.references :creator, references: :users, null: false, foreign_key: { to_table: :users}
 
       t.timestamps
     end
