@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tracklist_track: one
+  identifier_id: 
+  suggested_name: MyString
+  suggested_artist: one
+
+two:
+  tracklist_track: two
+  identifier_id: 
+  suggested_name: MyString
+  suggested_artist: two
