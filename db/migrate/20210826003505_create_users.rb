@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :last_name
       t.string :email_address, :null => false, :unique => true
       t.string :uid
+      # TODO Add bcrypt column
 
       t.timestamps
     end
