@@ -1,6 +1,8 @@
-# Data
+# Global variables
+number_of_users = 50
 
-# TODO This needs to be in a different file and imported, it is too complex for here.
+# Data
+    # TODO This needs to be in a different file and imported, it is too complex for here.
 tracklists = [
     {
         name: 'Live at UMF Radio',
@@ -105,6 +107,7 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
                 artist: find_or_create_artist(track[:artist]),
                 label: find_or_create_label(track[:label])
             )
+            byebug
             previous_tracklist_track = TracklistTrack.create(
                 tracklist: cur_tracklist,
                 track: cur_track,
@@ -112,15 +115,10 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
                 identifier: find_random_user(number_of_users)
             )
 
-            byebug
-
             print "."
         end
     end
 end
-
-# How many users to create
-number_of_users = 50
 
 # Call
 create_users(number_of_users)
