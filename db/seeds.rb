@@ -11,10 +11,10 @@ tracklists = [
             {name: 'Downriver', artist: 'Roger Martinez', label: 'Lost & Found'},
             {name: 'Epika', artist: 'Guy Mantzur & Roy Rosenfeld', label: 'Kompakt'},
             {name: 'Small Heart Attack (Guy J Remix)', artist: 'Guy Mantzur & Sahar Z', label: 'Lost & Found'},
-            {name: 'Matador On A Lose', artist: 'Guy J', label: null},
-            {name: 'Small Heart Attack (Agents of Time Reinterpretation', artist: 'Guy Mantzur & Sahar Z', 'Lost & Found'}
+            {name: 'Matador On A Lose', artist: 'Guy J', label: nil},
+            {name: 'Small Heart Attack (Agents of Time Reinterpretation', artist: 'Guy Mantzur & Sahar Z', label: 'Lost & Found'},
             {name: 'Ego Tripping (Guy J Remix)', artist: 'Pedro Aguiar', label: 'Lost & Found'},
-            {name: 'Shaiva (Guy J Remix)', artist: 'Chab & DJ Nukem', label: null},
+            {name: 'Shaiva (Guy J Remix)', artist: 'Chab & DJ Nukem', label: nil},
             {name: `Fool's Don't Last`, artist: 'Guy J', label: 'Bedrock'},
             {name: 'Modular Memories', artist: 'Blusoul', label: 'Lost & Found'},
             {name: 'Vapourspace (Intro Mix)', artist: 'Sasha', label: 'Last Night On Earth'},
@@ -28,17 +28,17 @@ tracklists = [
         artist: 'Guy J',
         soundcloud_track_id: 1106205265,
         tracks: [
-            {name: 'Aeons (Tom Day Remix)', artist: 'Ryan Davis', label: null},
-            {name: 'Hole in the Sun (Mr. Herbert Quain 94 Sunrise Version)', artist: 'Ricciardi ft. Notquietsound', label: null},
+            {name: 'Aeons (Tom Day Remix)', artist: 'Ryan Davis', label: nil},
+            {name: 'Hole in the Sun (Mr. Herbert Quain 94 Sunrise Version)', artist: 'Ricciardi ft. Notquietsound', label: nil},
             {name: 'Being Me', artist: 'Melchior Sultana & Janelle Pulo', label: 'Being Me'},
-            {name: null, artist: null, label: null},
-            {name: 'Dry Bridge', artist: 'Clarinets', label: null},
+            {name: nil, artist: nil, label: nil},
+            {name: 'Dry Bridge', artist: 'Clarinets', label: nil},
             {name: 'Kingdom Adesse Versions Remix', artist: 'Maribou State ft. North Downs', label: 'Counter (Ninja)'},
             {name: 'The Nanananinai', artist: 'Holmar', label: 'Get Physical'},
             {name: 'Meet Me On Pluto!', artist: 'Brigade & Acud', label: 'Laut & Luise'},
             {name: 'Rose Rogue (Nightmares On Wax ReRub Edit)', artist: 'St. Germain', label: 'Parlophone'},
             {name: 'Misty Road', artist: 'Andre Lodemann', label: 'Best Works'},
-            {name: null, artist: null, label: null},
+            {name: nil, artist: nil, label: nil},
             {name: 'Aurora (AM Mix)', artist: 'Guy J', label: 'Lost & Found'}
         ]
     }
@@ -72,11 +72,11 @@ def create_users(amount)
 end
 
 def find_or_create_artist(artist_name)
-    artist_name ? Artist.find_or_create_by(name: artist_name) : null
+    artist_name ? Artist.find_or_create_by(name: artist_name) : nil
 end
 
 def find_or_create_label(label_name)
-    label_name ? Label.find_or_create_by(name: label_name) : null
+    label_name ? Label.find_or_create_by(name: label_name) : nil
 end
 
 def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
@@ -91,7 +91,7 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
             creator: User.find(rand(number_of_users + 1))
         )
 
-        previous_tracklist_track = null
+        previous_tracklist_track = nil
 
         tracklist.tracks.each_with_index do |track, idx|
             cur_track = Track.create(

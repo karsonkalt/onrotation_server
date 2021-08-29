@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_08_26_011255) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_artists_on_name"
   end
 
   create_table "bookmarked_tracklists", force: :cascade do |t|
@@ -99,6 +100,7 @@ ActiveRecord::Schema.define(version: 2021_08_26_011255) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["artist_id"], name: "index_tracks_on_artist_id"
     t.index ["label_id"], name: "index_tracks_on_label_id"
+    t.index ["name"], name: "index_tracks_on_name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -109,8 +111,8 @@ ActiveRecord::Schema.define(version: 2021_08_26_011255) do
     t.string "uid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email_address"], name: "index_users_on_email_address", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
+    t.index ["email_address"], name: "index_users_on_email_address"
+    t.index ["username"], name: "index_users_on_username"
   end
 
   add_foreign_key "bookmarked_tracklists", "tracklists"
