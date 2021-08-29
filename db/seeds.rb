@@ -95,16 +95,18 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
             soundcloud_track_id: tracklist[:soundcloud_track_id],
             creator: find_random_user(number_of_users)
         )
-        byebug
 
         previous_tracklist_track = nil
 
-        tracklist.tracks.each_with_index do |track, idx|
+
+        tracklist[:tracks].each_with_index do |track, idx|
             cur_track = Track.create(
                 name: track[:name],
                 artist: find_or_create_artist(track[:artist]),
                 label: find_or_create_label(track[:label])
             )
+
+            byebug
 
             previous_tracklist_track = TracklistTrack.create(
                 tracklist: cur_tracklist,
