@@ -1,20 +1,45 @@
 # Data
-tracks = [
-    {name: 'Downriver', artist: 'Roger Martinez', label: 'Lost & Found'},
-    {name: 'Epika', artist: 'Guy Mantzur', label: 'Kompakt'},
-    {name: 'Small Heart Attack', artist: 'Guy Mantzur', label: 'Lost & Found'},
-    {name: 'Matador On A Lose', artist: 'Guy J', label: null},
-    {name: 'Ego Tripping', artist: 'Pedro Aguiar', label: 'Lost & Found'},
-    {name: `Fool's Don't Last`, artist: 'Guy J', label: 'Bedrock'},
-    {name: 'Modular Memories', artist: 'Blusoul', label: 'Lost & Found'},
-    {name: 'Vapourspace (Intro Mix)', artist: 'Sasha', label: 'Last Night On Earth'},
-    {name: 'Nirvana', artist: 'Guy J', label: 'Bedrock'},
-    {name: 'Aeons', artist: 'Ryan Davis', label: 'Unreleased'},
-    {name: 'The Nanananinai', artist: 'Holmar', label: 'Get Physical'},
-    {name: 'Aurora (AM Mix)', artist: 'Guy J', label: 'Lost & Found'},
-    {name: null, artist: '', label: ''},
-    {name: '', artist: '', label: ''},
-    {name: '', artist: '', label: ''}
+tracklists = [
+    {
+        name: 'Live at UMF Radio',
+        date_played: '2021-8-25',
+        artist: 'Guy J',
+        soundcloud_track_id: 198277293,
+        tracks: [
+            {name: 'Downriver', artist: 'Roger Martinez', label: 'Lost & Found'},
+            {name: 'Epika', artist: 'Guy Mantzur & Roy Rosenfeld', label: 'Kompakt'},
+            {name: 'Small Heart Attack (Guy J Remix)', artist: 'Guy Mantzur & Sahar Z', label: 'Lost & Found'},
+            {name: 'Matador On A Lose', artist: 'Guy J', label: null},
+            {name: 'Small Heart Attack (Agents of Time Reinterpretation', artist: 'Guy Mantzur & Sahar Z', 'Lost & Found'}
+            {name: 'Ego Tripping (Guy J Remix)', artist: 'Pedro Aguiar', label: 'Lost & Found'},
+            {name: 'Shaiva (Guy J Remix)', artist: 'Chab & DJ Nukem', label: null},
+            {name: `Fool's Don't Last`, artist: 'Guy J', label: 'Bedrock'},
+            {name: 'Modular Memories', artist: 'Blusoul', label: 'Lost & Found'},
+            {name: 'Vapourspace (Intro Mix)', artist: 'Sasha', label: 'Last Night On Earth'},
+            {name: 'Nirvana', artist: 'Guy J', label: 'Bedrock'}
+        ]
+    },
+
+    {
+        name: 'Live at Stella Polaris Frederiskberg, Denmark',
+        date_played: '2021-8-7',
+        artist: 'Guy J',
+        soundcloud_track_id: 1106205265,
+        tracks: [
+            {name: 'Aeons (Tom Day Remix)', artist: 'Ryan Davis', label: null},
+            {name: 'Hole in the Sun (Mr. Herbert Quain 94 Sunrise Version)', artist: 'Ricciardi ft. Notquietsound', label: null},
+            {name: 'Being Me', artist: 'Melchior Sultana & Janelle Pulo', label: 'Being Me'},
+            {name: null, artist: null, label: null},
+            {name: 'Dry Bridge', artist: 'Clarinets', label: null},
+            {name: 'Kingdom Adesse Versions Remix', artist: 'Maribou State ft. North Downs', label: 'Counter (Ninja)'},
+            {name: 'The Nanananinai', artist: 'Holmar', label: 'Get Physical'},
+            {name: 'Meet Me On Pluto!', artist: 'Brigade & Acud', label: 'Laut & Luise'},
+            {name: 'Rose Rogue (Nightmares On Wax ReRub Edit)', artist: 'St. Germain', label: 'Parlophone'},
+            {name: 'Misty Road', artist: 'Andre Lodemann', label: 'Best Works'},
+            {name: null, artist: null, label: null},
+            {name: 'Aurora (AM Mix)', artist: 'Guy J', label: 'Lost & Found'}
+        ]
+    }
 ]
 
 
@@ -52,22 +77,43 @@ def find_or_create_label(label_name)
     label_name ? Label.find_or_create_by(name: label_name) : null
 end
 
-
-def create_tracks_artists_labels(tracks)
-    puts "Generating tracks, artists, and labels\n"
+def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
+    puts "Generating tracklists, tracks, artists, and labels\n"
     
-    tracks.each do |track|
-        Track.create(
-            name: track.name,
-            artist: find_or_create_artist(track.artist),
-            label: find_or_create_label(track.label)
+    tracklists.each do |tracklist|
+        cur_tracklist = Tracklist.create(
+            name: tracklist.name,
+            date_played: Date.parse(tracklist.date_played),
+            artist: find_or_create_artist(tracklist.artist),
+            soundcloud_track_id: tracklist.soundcloud_track_id,
+            creator: User.find(rand(number_of_users + 1))
         )
 
-        print "."
+        previous_tracklist_track = null
+
+        tracklist.tracks.each_with_index do |track, idx|
+            cur_track = Track.create(
+                name: track.name,
+                artist: find_or_create_artist(track.artist),
+                label: find_or_create_label(track.label)
+            )
+
+            previous_tracklist_track = TracklistTrack.create(
+                tracklist: cur_tracklist,
+                track: cur_track,
+                predessor_id: previous_tracklist_track,
+                identifier_id: User.find(rand(number_of_users + 1))
+            )
+
+            print "."
+        end
     end
 end
 
 
+# How many users to create
+number_of_users = 50
+
 # Call
-create_users(50)
-create_tracks_artists_labels(tracks)
+create_users(number_of_users)
+create_tracks_artists_labels(tracks, number_of_users)
