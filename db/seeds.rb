@@ -117,4 +117,4 @@ number_of_users = 50
 
 # Call
 create_users(number_of_users)
-create_tracks_artists_labels(tracks, number_of_users)
+create_tracklists_tracks_artists_labels(tracklists, number_of_users)
