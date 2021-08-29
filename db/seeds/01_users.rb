@@ -1,5 +1,9 @@
 require_relative '00_globals'
 
+def find_random_user(number_of_users)
+    User.find(rand(number_of_users) + 1)
+end
+
 def create_users(amount)
     puts "Generating random users from Faker gem\n"
     

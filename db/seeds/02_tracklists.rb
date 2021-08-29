@@ -8,10 +8,6 @@ def find_or_create_label(label_name)
     label_name ? Label.find_or_create_by(name: label_name) : nil
 end
 
-def find_random_user(number_of_users)
-    User.find(rand(number_of_users) + 1)
-end
-
 def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
     puts "Generating tracklists, tracks, artists, and labels\n"
     

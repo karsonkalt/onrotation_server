@@ -10,4 +10,8 @@ class Track < ApplicationRecord
 
   #TODO If ID'ing a track already in the database, then it should delete the record of the null track and update the tracklist_tracks to point to the track.
 
+  def released?
+    !!label
+  end
+
 end
