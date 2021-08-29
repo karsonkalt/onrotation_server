@@ -15,7 +15,7 @@ tracklists = [
             {name: 'Small Heart Attack (Agents of Time Reinterpretation', artist: 'Guy Mantzur & Sahar Z', label: 'Lost & Found'},
             {name: 'Ego Tripping (Guy J Remix)', artist: 'Pedro Aguiar', label: 'Lost & Found'},
             {name: 'Shaiva (Guy J Remix)', artist: 'Chab & DJ Nukem', label: nil},
-            {name: `Fool's Don't Last`, artist: 'Guy J', label: 'Bedrock'},
+            {name: "Fool's Don't Last", artist: 'Guy J', label: 'Bedrock'},
             {name: 'Modular Memories', artist: 'Blusoul', label: 'Lost & Found'},
             {name: 'Vapourspace (Intro Mix)', artist: 'Sasha', label: 'Last Night On Earth'},
             {name: 'Nirvana', artist: 'Guy J', label: 'Bedrock'}
@@ -46,6 +46,7 @@ tracklists = [
 
 
 # Methods
+# TODO Lots of this can get moved into the models maybe?
 def create_users(amount)
     puts "Generating random users from Faker gem\n"
     
@@ -79,32 +80,37 @@ def find_or_create_label(label_name)
     label_name ? Label.find_or_create_by(name: label_name) : nil
 end
 
+def find_random_user(number_of_users)
+    User.find(rand(number_of_users + 1))
+end
+
 def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
     puts "Generating tracklists, tracks, artists, and labels\n"
     
     tracklists.each do |tracklist|
         cur_tracklist = Tracklist.create(
-            name: tracklist.name,
-            date_played: Date.parse(tracklist.date_played),
-            artist: find_or_create_artist(tracklist.artist),
-            soundcloud_track_id: tracklist.soundcloud_track_id,
-            creator: User.find(rand(number_of_users + 1))
+            name: tracklist[:name],
+            date_played: Date.parse(tracklist[:date_played]),
+            artist: find_or_create_artist(tracklist[:artist]),
+            soundcloud_track_id: tracklist[:soundcloud_track_id]
+            # creator: find_random_user(number_of_users)
         )
+        byebug
 
         previous_tracklist_track = nil
 
         tracklist.tracks.each_with_index do |track, idx|
             cur_track = Track.create(
-                name: track.name,
-                artist: find_or_create_artist(track.artist),
-                label: find_or_create_label(track.label)
+                name: track[:name],
+                artist: find_or_create_artist(track[:artist]),
+                label: find_or_create_label(track[:label])
             )
 
             previous_tracklist_track = TracklistTrack.create(
                 tracklist: cur_tracklist,
                 track: cur_track,
                 predessor_id: previous_tracklist_track,
-                identifier_id: User.find(rand(number_of_users + 1))
+                identifier_id: find_random_user(number_of_users).id
             )
 
             print "."
