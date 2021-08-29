@@ -5,7 +5,7 @@ def find_random_user(number_of_users)
 end
 
 def create_users(amount)
-    puts "Generating random users from Faker gem\n"
+    puts "Generating Users with Faker gem\n"
     
     amount.times do
         if rand(2) == 1
@@ -27,4 +27,6 @@ def create_users(amount)
 
         print "."
     end
+
+    print "\n"
 end

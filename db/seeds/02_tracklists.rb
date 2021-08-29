@@ -9,7 +9,7 @@ def find_or_create_label(label_name)
 end
 
 def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
-    puts "Generating tracklists, tracks, artists, and labels\n"
+    puts "Generating Tracklists, Tracks, Artists, and Labels\n"
     
     tracklists.each do |tracklist|
         cur_tracklist = Tracklist.create(
@@ -40,4 +40,6 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
             print "."
         end
     end
+
+    print "\n"
 end
