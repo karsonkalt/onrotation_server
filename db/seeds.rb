@@ -105,15 +105,14 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
                 artist: find_or_create_artist(track[:artist]),
                 label: find_or_create_label(track[:label])
             )
-
-            byebug
-
             previous_tracklist_track = TracklistTrack.create(
                 tracklist: cur_tracklist,
                 track: cur_track,
                 predessor_id: previous_tracklist_track,
                 identifier: find_random_user(number_of_users)
             )
+
+            byebug
 
             print "."
         end
