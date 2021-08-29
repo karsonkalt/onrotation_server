@@ -112,7 +112,7 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
                 tracklist: cur_tracklist,
                 track: cur_track,
                 predessor_id: previous_tracklist_track,
-                identifier_id: find_random_user(number_of_users).id
+                identifier: find_random_user(number_of_users)
             )
 
             print "."
