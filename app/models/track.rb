@@ -3,6 +3,7 @@ class Track < ApplicationRecord
   belongs_to :label, optional: true
   has_many :bookmarked_tracks
   has_many :tracklist_tracks
+  has_many :suggested_track_identifications, through: :tracklist_tracks
 
   scope :unknown_name_unknown_artist, -> { where("name IS NULL and artist_id IS NULL") }
   scope :unknown_name_known_artist, -> { where("name IS NULL and artist_id IS NOT NULL") }

@@ -8,6 +8,8 @@ class CreateSuggestedTrackIdentifications < ActiveRecord::Migration[6.1]
       # TODO Check the alias of suggested_artist to artist running properly with db constraints
       t.references :suggested_artist, references: :artists, :null => false, foreign_key: { to_table: :artists }
 
+      # TODO This needs to also reference a label? Or should that be in the track? If they know it then it should be stored here?
+
       t.timestamps
     end
   end

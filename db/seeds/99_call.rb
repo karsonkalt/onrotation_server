@@ -4,3 +4,4 @@ create_users($number_of_users)
 create_tracklists_tracks_artists_labels($tracklists, $number_of_users)
 create_bookmarked_tracks
 create_bookmarked_tracklists
+create_suggested_track_identifications
