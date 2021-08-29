@@ -111,7 +111,7 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
             previous_tracklist_track = TracklistTrack.create(
                 tracklist: cur_tracklist,
                 track: cur_track,
-                predessor_id: previous_tracklist_track,
+                predessor_id: previous_tracklist_track ? previous_tracklist_track.id : nil,
                 identifier: find_random_user(number_of_users)
             )
 
