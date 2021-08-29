@@ -21,3 +21,4 @@
 1. Ran into issue with constraint enforcement with ActiveRecord. We could not resolve even with a TC so we changed hash notation from `key: value` to `:key => value`. The db started to enforce uniqueness and null constrains on the next migration.
 2. Adding indexing to columns for faster searching. Because SQL is SLOW.
 3. Add CLI feedback to the seed file because I am working so much on constraints and relationships and getting the db working properly.
+4. Large seed file separated into own directories with require for maintainability.
