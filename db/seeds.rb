@@ -1,4 +1,6 @@
 # Data
+
+# TODO This needs to be in a different file and imported, it is too complex for here.
 tracklists = [
     {
         name: 'Live at UMF Radio',
@@ -109,7 +111,6 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
         end
     end
 end
-
 
 # How many users to create
 number_of_users = 50
