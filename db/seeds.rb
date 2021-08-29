@@ -83,7 +83,7 @@ def find_or_create_label(label_name)
 end
 
 def find_random_user(number_of_users)
-    User.find(rand(number_of_users + 1))
+    User.find(rand(number_of_users) + 1)
 end
 
 def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
