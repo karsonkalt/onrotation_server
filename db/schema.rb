@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_08_26_011255) do
   create_table "bookmarked_tracklists", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "tracklist_id", null: false
-    t.boolean "has_unseen_updates"
+    t.boolean "has_unseen_updates", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["tracklist_id"], name: "index_bookmarked_tracklists_on_tracklist_id"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_08_26_011255) do
   create_table "bookmarked_tracks", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "track_id", null: false
-    t.boolean "has_unseen_updates"
+    t.boolean "has_unseen_updates", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["track_id"], name: "index_bookmarked_tracks_on_track_id"
