@@ -40,5 +40,39 @@ $tracklists = [
             {name: nil, artist: nil, label: nil},
             {name: 'Aurora (AM Mix)', artist: 'Guy J', label: 'Lost & Found'}
         ]
+    },
+
+    {
+        name: 'Lost & Found Presents Echos 043',
+        date_played: '2021-3-25',
+        artist: 'Khen',
+        soundcloud_track_id: 999837919,
+        tracks: [
+            {name: nil, artist: nil, label: nil},
+            {name: nil, artist: 'Eli Nissan', label: nil},
+            {name: nil, artist: nil, label: nil},
+            {name: 'Fangtango', artist: 'Matthew Dekay', label: Maeve},
+            {name: 'Sunflakes (Bronzed Re-Edit)', artist: 'Khen', label: 'MicroCastle'},
+            {name: 'The Charm', artist: 'Guy J', label: nil},
+            {name: "Girl's Laugh", artist: 'Serge Devant', label: 'Crosstown Rebels'},
+            {name: 'Maple', artist: 'Khen', label: 'Warung'},
+            {name: nil, artist: 'Roy Rosenfeld', label: nil},
+            {name: 'Drones', artist: 'SIS', label: nil},
+            {name: 'Napud Chamra', artist: 'K Loveski & Ewan Rill', label: 'The Soundgarden'},
+            {name: 'Endora', artist: 'Endora', label: 'All Day I Dream'},
+            {name: nil, artist: nil, label: nil},
+            {name: 'Natural Fear (Sahar Z & Khen Remix)', artist: 'Interaxxis', label: 'Plattenbank'},
+            {name: 'Embarkment', artist: 'Weird Sounding Dude', label: 'The Soundgarden'},
+            {name: 'Every Little Beat (Khen Remix)', artist: 'Above & Beyond ft. Richard Bedford', label: 'Anjunabeats'},
+            {name: nil, artist: 'Khen', label: nil},
+            {name: 'Milestone', artist: 'Guy J', label: 'Lost & Found'},
+            {name: 'Silent Summer', artist: 'Budakid', label: 'Lost & Found'},
+            {name: 'Cornfields', artist: 'Khen', label: 'Vivrant'},
+            {name: 'Stevie', artist: 'Sebastian Leger', label: 'Lost Miracle'},
+            {name: 'Orchard (Kasper Koman Remix)', artist: 'Dmitry Molosh', label: 'Mango Alley'},
+            {name: 'Waves (K Loveski Remix)', artist: 'Disalazar', label: 'Bevel'},
+            {name: nil, artist: 'Eli Nissan', label: nil},
+            {name: 'My Golden Cage (Kasper Koman 6AM Remix)', artist: 'Guy Mantzur & Khen', label: 'Bedrock'}
+        ]
     }
 ]

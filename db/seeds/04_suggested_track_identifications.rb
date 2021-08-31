@@ -39,3 +39,21 @@ def create_suggested_track_identifications
 
     print "\n"
 end
+
+def create_suggested_track_identification_votes
+    puts "Generating SuggestedTrackIdentificationVotes\n"
+
+    SuggestedTrackIdentification.all.each do |suggested_track_identification|
+        rand(6).times do
+            SuggestedTrackIdentificationVote.create(
+                identification: suggested_track_identification,
+                voter: User.find(rand(User.count) + 1),
+                is_identification_correct: rand(3) === 0
+            )
+
+            print "."
+        end
+    end
+
+    print "\n"
+end
