@@ -51,7 +51,7 @@ $tracklists = [
             {name: nil, artist: nil, label: nil},
             {name: nil, artist: 'Eli Nissan', label: nil},
             {name: nil, artist: nil, label: nil},
-            {name: 'Fangtango', artist: 'Matthew Dekay', label: Maeve},
+            {name: 'Fangtango', artist: 'Matthew Dekay', label: 'Maeve'},
             {name: 'Sunflakes (Bronzed Re-Edit)', artist: 'Khen', label: 'MicroCastle'},
             {name: 'The Charm', artist: 'Guy J', label: nil},
             {name: "Girl's Laugh", artist: 'Serge Devant', label: 'Crosstown Rebels'},
