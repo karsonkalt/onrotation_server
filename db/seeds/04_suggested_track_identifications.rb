@@ -12,6 +12,7 @@ def create_suggested_track_identifications
                 identifier: User.find(rand(User.count) + 1),
                 # TODO Can track find its tracklist tracks?
                 tracklist_track: track.tracklist_tracks[0],
+                # TODO What if suggested Artist is not in the db?
                 suggested_artist: Artist.find(rand(Artist.count) + 1),
                 suggested_name: Faker::Music::Phish.song
             )
