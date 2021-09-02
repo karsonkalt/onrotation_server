@@ -4,4 +4,22 @@ class Tracklist < ApplicationRecord
   has_many :bookmarked_tracklists
   has_many :tracklist_tracks
   has_many :tracks, through: :tracklist_tracks
+
+  def tracks
+    #TODO Is there a way I can put in the cue time info on this as well?
+
+    tracklist_tracks = self.tracklist_tracks.includes(:track)
+    current_tracklist_track = tracklist_tracks.find { |tracklist_track| tracklist_track.predessor_id == nil}
+    
+    array_of_tracks = []
+
+    loop do
+      array_of_tracks << current_tracklist_track.track
+      current_tracklist_track = tracklist_tracks.find { |tracklist_track| tracklist_track.predessor_id == current_tracklist_track.id}
+      break if current_tracklist_track == nil
+    end
+
+    array_of_tracks
+
+  end
 end
