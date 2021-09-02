@@ -22,3 +22,5 @@
 2. Adding indexing to columns for faster searching. Because SQL is SLOW.
 3. Add CLI feedback to the seed file because I am working so much on constraints and relationships and getting the db working properly.
 4. Large seed file separated into own directories with require for maintainability.
+5. I avoided N+1 queries using the `.includes` method in ActiveRecord. This eagerly loads the relations so that only one query is sent to the database and not hit the database again and again throught the loop in the linked list.
+6. I Used a LinkedList format to iterate throught the track order and solve the issue with an ordered list in SQL. This allows me to keep records in any order, but they enforce uniqueness of TracklistTrack `id`. I built a method to loop through and search for the next item.
