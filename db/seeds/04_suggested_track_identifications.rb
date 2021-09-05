@@ -8,12 +8,11 @@ def create_suggested_track_identifications
         1.times do
 
             SuggestedTrackIdentification.create(
-                # TODO Refactor this into User class as private method
-                identifier: User.find(rand(User.count) + 1),
+                identifier: User.find_random,
                 # TODO Can track find its tracklist tracks?
                 tracklist_track: track.tracklist_tracks[0],
                 # TODO What if suggested Artist is not in the db?
-                suggested_artist: Artist.find(rand(Artist.count) + 1),
+                suggested_artist: Artist.find_random,
                 suggested_name: Faker::Music::Phish.song
             )
 
@@ -26,8 +25,7 @@ def create_suggested_track_identifications
         1.times do
 
             SuggestedTrackIdentification.create(
-                # TODO Refactor this into User class as private method
-                identifier: User.find(rand(User.count) + 1),
+                identifier: User.find_random,
                 # TODO Can track find its tracklist tracks?
                 tracklist_track: track.tracklist_tracks[0],
                 suggested_artist: track.artist,
@@ -48,7 +46,7 @@ def create_suggested_track_identification_votes
         rand(6).times do
             SuggestedTrackIdentificationVote.create(
                 identification: suggested_track_identification,
-                voter: User.find(rand(User.count) + 1),
+                voter: User.find_random,
                 is_identification_correct: rand(3) === 0
             )
 
