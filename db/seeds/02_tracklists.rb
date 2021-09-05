@@ -17,7 +17,7 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
             date_played: Date.parse(tracklist[:date_played]),
             artist: find_or_create_artist(tracklist[:artist]),
             soundcloud_track_id: tracklist[:soundcloud_track_id],
-            creator: find_random_user(number_of_users)
+            creator: User.find_random_user
         )
 
         previous_tracklist_track = nil
@@ -34,7 +34,7 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
                 tracklist: cur_tracklist,
                 track: cur_track,
                 predessor_id: previous_tracklist_track ? previous_tracklist_track.id : nil,
-                identifier: find_random_user(number_of_users)
+                identifier: User.find_random_user
             )
 
             print "."

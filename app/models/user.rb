@@ -7,4 +7,5 @@ class User < ApplicationRecord
     has_many :suggested_track_identification_votes
 
     # TODO Add bcrypt
+
 end

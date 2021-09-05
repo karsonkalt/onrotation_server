@@ -1,10 +1,5 @@
 require_relative '00_globals'
 
-# TODO Move this into User class or Application Model."
-def find_random_user(number_of_users)
-    User.find(rand(number_of_users) + 1)
-end
-
 def create_users(amount)
     puts "Generating Users with Faker gem\n"
     
