@@ -3,6 +3,7 @@ class Track < ApplicationRecord
   belongs_to :label, optional: true
   has_many :bookmarked_tracks
   has_many :tracklist_tracks
+  has_many :tracklists, through: :tracklist_tracks
   has_many :suggested_track_identifications, through: :tracklist_tracks
 
   attr_accessor :order
