@@ -14,14 +14,31 @@ class Tracklist < ApplicationRecord
     current_tracklist_track = tracklist_tracks.find { |tracklist_track| tracklist_track.predessor_id == nil}
     
     array_of_tracks = []
+    order = 1
 
     loop do
-      array_of_tracks << current_tracklist_track.track
+      current_track = current_tracklist_track.track
+      current_track.order = order
+      current_track.cue_time = current_tracklist_track.cue_time
+
+      order += 1
+
+      array_of_tracks << current_track
+
       current_tracklist_track = tracklist_tracks.find { |tracklist_track| tracklist_track.predessor_id == current_tracklist_track.id}
+
       break if current_tracklist_track == nil
     end
 
     array_of_tracks
 
+  end
+
+  def add_track
+    # TODO Add a track
+  end
+
+  def delete_track
+    # TODO Delete a track
   end
 end
