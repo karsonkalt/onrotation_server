@@ -13,6 +13,7 @@ class User < ApplicationRecord
     validates :username, length: {in: 4..15}
     # TODO add URI mailto gem
     validates :email_address, presence: true
+    validates :email_address, uniqueness: true
     validates :email_address, format: { with: URI::MailTo::EMAIL_REGEXP } 
 
 end
