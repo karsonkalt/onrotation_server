@@ -6,6 +6,8 @@ class Track < ApplicationRecord
   has_many :tracklists, through: :tracklist_tracks
   has_many :suggested_track_identifications, through: :tracklist_tracks
 
+  #No validations needed
+
   #AttrAccessors
   attr_accessor :order
   attr_accessor :cue_time
