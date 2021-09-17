@@ -8,6 +8,14 @@ def find_or_create_label(label_name)
     label_name ? Label.find_or_create_by(name: label_name) : nil
 end
 
+def find_or_create_track(track_name, artist_name, label_name)
+    Track.find_or_create_by(
+        name: track_name,
+        artist: find_or_create_artist(artist_name),
+        label: find_or_create_label(label_name)
+    )
+end
+
 def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
     puts "Generating Tracklists, Tracks, Artists, and Labels\n"
     
@@ -22,13 +30,10 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
 
         previous_tracklist_track = nil
 
-
+        #TODO Abstract the track creation method
         tracklist[:tracks].each_with_index do |track, idx|
-            cur_track = Track.create(
-                name: track[:name],
-                artist: find_or_create_artist(track[:artist]),
-                label: find_or_create_label(track[:label])
-            )
+
+            cur_track = find_or_create_track(track[:name], track[:artist], track[:label])
             
             previous_tracklist_track = TracklistTrack.create(
                 tracklist: cur_tracklist,

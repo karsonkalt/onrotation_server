@@ -3,4 +3,7 @@ class Artist < ApplicationRecord
     has_many :tracks
     #TODO Add alias for has_many relationship to all models.
     has_many :suggested_track_identifications, :foreign_key => 'suggested_artist_id'
+
+    validates :name, uniqeness: true
+    validates :name, presence: true
 end

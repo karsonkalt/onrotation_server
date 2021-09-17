@@ -5,6 +5,11 @@ class Tracklist < ApplicationRecord
   has_many :tracklist_tracks
   has_many :tracks, through: :tracklist_tracks
 
+  validates :name, presence: true
+  validates :date_played, presence: true
+  validates :artist, presence: true
+  validates :soundcloud_track_id, uniqueness: true
+
   def tracks
     #TODO Is there a way I can put in the cue time info on this as well?
     #TODO A better way to run through this linked list is to structure with the next track, instead of referencing the previous.
