@@ -10,32 +10,37 @@ class Tracklist < ApplicationRecord
   validates :artist, presence: true
   validates :soundcloud_track_id, uniqueness: true
 
+  @tracks = nil
+
   def tracks
     #TODO Is there a way I can put in the cue time info on this as well?
     #TODO A better way to run through this linked list is to structure with the next track, instead of referencing the previous.
     #TODO This would avoid the .find method and speed up the linkedlist.
+    if @tracks === nil
+      tracklist_tracks = self.tracklist_tracks.includes(:track)
+      current_tracklist_track = tracklist_tracks.find { |tracklist_track| tracklist_track.predessor_id == nil}
+      
+      array_of_tracks = []
+      order = 1
 
-    tracklist_tracks = self.tracklist_tracks.includes(:track)
-    current_tracklist_track = tracklist_tracks.find { |tracklist_track| tracklist_track.predessor_id == nil}
-    
-    array_of_tracks = []
-    order = 1
+      loop do
+        current_track = current_tracklist_track.track
+        current_track.order = order
+        current_track.cue_time = current_tracklist_track.cue_time
 
-    loop do
-      current_track = current_tracklist_track.track
-      current_track.order = order
-      current_track.cue_time = current_tracklist_track.cue_time
+        order += 1
 
-      order += 1
+        array_of_tracks << current_track
 
-      array_of_tracks << current_track
+        current_tracklist_track = tracklist_tracks.find { |tracklist_track| tracklist_track.predessor_id == current_tracklist_track.id}
 
-      current_tracklist_track = tracklist_tracks.find { |tracklist_track| tracklist_track.predessor_id == current_tracklist_track.id}
+        break if current_tracklist_track == nil
+      end
 
-      break if current_tracklist_track == nil
+      @tracks = array_of_tracks
+    else
+      @tracks
     end
-
-    array_of_tracks
 
   end
 
@@ -45,5 +50,17 @@ class Tracklist < ApplicationRecord
 
   def delete_track
     # TODO Delete a track
+  end
+
+  def number_of_identified_tracks
+    self.tracks.count { |track| track.name}
+  end
+
+  def number_of_unidentified_tracks
+    self.number_of_total_tracks - number_of_identified_tracks
+  end
+
+  def number_of_total_tracks
+    self.tracks.length
   end
 end

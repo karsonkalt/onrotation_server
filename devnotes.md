@@ -27,3 +27,4 @@
 5. I avoided N+1 queries using the `.includes` method in ActiveRecord. This eagerly loads the relations so that only one query is sent to the database and not hit the database again and again throught the loop in the linked list.
 6. I Used a LinkedList format to iterate throught the track order and solve the issue with an ordered list in SQL. This allows me to keep records in any order, but they enforce uniqueness of TracklistTrack `id`. I built a method to loop through and search for the next item.
 7. Used ApplicationRecord class to build find_random that abstracts child classname and returns a random instance for all items in db.
+8. Used instance variable to reduce n+1 queries when eagerly loading and counting data to not hit the db again. (Tracklists)
