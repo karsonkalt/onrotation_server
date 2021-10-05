@@ -57,10 +57,10 @@ class Tracklist < ApplicationRecord
   end
 
   def number_of_unidentified_tracks
-    self.number_of_total_tracks - number_of_identified_tracks
+    self.number_of_tracks - number_of_identified_tracks
   end
 
-  def number_of_total_tracks
+  def number_of_tracks
     self.tracks.length
   end
 end

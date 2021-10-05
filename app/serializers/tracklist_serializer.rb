@@ -1,7 +1,8 @@
 class TracklistSerializer < ActiveModel::Serializer
-  attributes :id, :name, :date_played, :created_at, :soundcloud_track_id, :number_of_unidentified_tracks
+  attributes :id, :name, :date_played, :created_at, :soundcloud_track_id, :number_of_unidentified_tracks, :number_of_tracks
 
   belongs_to :artist
+  belongs_to :creator, serializer: UserSerializer
 end
 
 # Data expected like:
