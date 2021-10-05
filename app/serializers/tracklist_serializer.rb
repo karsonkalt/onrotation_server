@@ -1,5 +1,8 @@
 class TracklistSerializer < ActiveModel::Serializer
-  attributes :id, :name, :date_played, :artist, :creator, :date_created,
+  attributes :id, :name, :date_played, :date_created,
+
+  belongs_to :artist
+  belongs_to :creator, class_name: 'User'
 end
 
 # Data expected like:
