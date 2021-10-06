@@ -26,6 +26,8 @@ class Tracklist < ApplicationRecord
       loop do
         current_track = current_tracklist_track.track
         current_track.order = order
+        current_track.identifier = current_tracklist_track.identifier
+        current_track.suggested_track_identifications = current_tracklist_track.suggested_track_identifications
         current_track.cue_time = current_tracklist_track.cue_time
 
         order += 1

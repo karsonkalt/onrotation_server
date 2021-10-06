@@ -11,6 +11,8 @@ class Track < ApplicationRecord
   #AttrAccessors
   attr_accessor :order
   attr_accessor :cue_time
+  attr_accessor :identifier
+  attr_accessor :suggested_track_identifications
 
   #Scope Methods
   scope :identified_tracks, -> { where("name IS NOT NULL and artist_id IS NOT NULL") }
