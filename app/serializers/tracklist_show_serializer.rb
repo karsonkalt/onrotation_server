@@ -4,6 +4,7 @@ class TracklistShowSerializer < ActiveModel::Serializer
   belongs_to :artist
   belongs_to :creator, serializer: UserSerializer
 
+  # TODO What is this line of code doing
   def tracks
     ActiveModel::SerializableResource.new(object.tracks,  each_serializer: TracklistTrackSerializer)
   end
