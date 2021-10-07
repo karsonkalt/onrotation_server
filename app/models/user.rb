@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     
-    # TODO Add bcrypt
+    has_secure_password
     
     has_many :bookmarked_tracklists
     has_many :bookmarked_tracks

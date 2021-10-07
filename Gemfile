@@ -44,3 +44,5 @@ gem "faker", "~> 2.19"
 gem "active_model_serializers", "~> 0.10.12"
 
 gem "rack-cors", "~> 1.1"
+
+gem "bcrypt", "~> 3.1"

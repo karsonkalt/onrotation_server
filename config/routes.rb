@@ -3,4 +3,9 @@ Rails.application.routes.draw do
   resources :tracklists, :artists, :tracks
 
   post '/login', to: 'sessions#login'
+
+  resources :users, only: [:show] do
+    resources :notifications, only: [:index]
+  end
+  
 end
