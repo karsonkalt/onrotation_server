@@ -33,8 +33,12 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
         #TODO Abstract the track creation method
         tracklist[:tracks].each_with_index do |track, idx|
 
-            cur_track = find_or_create_track(track[:name], track[:artist], track[:label])
-            time = Time.parse("00:" + track[:cue_time])
+            if track[:name]
+                cur_track = find_or_create_track(track[:name], track[:artist], track[:label])
+            else
+                cur_track = Track.create(name: track[:name], artist: track[:artist], label: track[:label])
+            end
+            time = Time.parse(track[:cue_time])
                         
             previous_tracklist_track = TracklistTrack.create(
                 tracklist: cur_tracklist,
@@ -44,7 +48,15 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
                 cue_time: time
             )
 
-            print "."
+            puts(previous_tracklist_track.tracklist.name)
+            puts(previous_tracklist_track.track.name)
+            puts(previous_tracklist_track.predessor_id || "no-predessor")
+            puts(previous_tracklist_track.identifier.username)
+            puts(previous_tracklist_track.cue_time)
+            puts("")
+
+
+            # print "."
         end
     end
 

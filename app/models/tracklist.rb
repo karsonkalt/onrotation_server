@@ -10,13 +10,11 @@ class Tracklist < ApplicationRecord
   validates :artist, presence: true
   validates :soundcloud_track_id, uniqueness: true
 
-  @tracks = nil
-
   def tracks
     #TODO Is there a way I can put in the cue time info on this as well?
     #TODO A better way to run through this linked list is to structure with the next track, instead of referencing the previous.
     #TODO This would avoid the .find method and speed up the linkedlist.
-    if @tracks === nil
+   
       tracklist_tracks = self.tracklist_tracks.includes(:track)
       current_tracklist_track = tracklist_tracks.find { |tracklist_track| tracklist_track.predessor_id == nil}
       
@@ -39,10 +37,7 @@ class Tracklist < ApplicationRecord
         break if current_tracklist_track == nil
       end
 
-      @tracks = array_of_tracks
-    else
-      @tracks
-    end
+      array_of_tracks
 
   end
 

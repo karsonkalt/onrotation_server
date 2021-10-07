@@ -8,7 +8,8 @@ class TracklistTrack < ApplicationRecord
   def cue_time
     hours = (super.strftime("%I").to_i - 5).to_s.rjust(2, '0')
     minutes = super.strftime("%M")
-    "#{hours}:#{minutes}"
+    seconds = super.strftime("%S")
+    "#{hours}:#{minutes}:#{seconds}"
   end
   
 end
