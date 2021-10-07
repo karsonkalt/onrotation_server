@@ -1,0 +1,2 @@
+class SuggestedTrackController < ApplicationController
+end

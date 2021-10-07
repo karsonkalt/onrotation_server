@@ -27,18 +27,18 @@ $tracklists = [
         artist: 'Guy J',
         soundcloud_track_id: 1106205265,
         tracks: [
-            {name: 'Aeons (Tom Day Remix)', artist: 'Ryan Davis', label: nil},
-            {name: 'Hole in the Sun (Mr. Herbert Quain 94 Sunrise Version)', artist: 'Ricciardi ft. Notquietsound', label: nil},
-            {name: 'Being Me', artist: 'Melchior Sultana & Janelle Pulo', label: 'Being Me'},
-            {name: nil, artist: nil, label: nil},
-            {name: 'Dry Bridge', artist: 'Clarinets', label: nil},
-            {name: 'Kingdom Adesse Versions Remix', artist: 'Maribou State ft. North Downs', label: 'Counter (Ninja)'},
-            {name: 'The Nanananinai', artist: 'Holmar', label: 'Get Physical'},
-            {name: 'Meet Me On Pluto!', artist: 'Brigade & Acud', label: 'Laut & Luise'},
-            {name: 'Rose Rogue (Nightmares On Wax ReRub Edit)', artist: 'St. Germain', label: 'Parlophone'},
-            {name: 'Misty Road', artist: 'Andre Lodemann', label: 'Best Works'},
-            {name: nil, artist: nil, label: nil},
-            {name: 'Aurora (AM Mix)', artist: 'Guy J', label: 'Lost & Found'}
+            {name: 'Aeons (Tom Day Remix)', artist: 'Ryan Davis', label: nil, cue_time: "00:00"},
+            {name: 'Hole in the Sun (Mr. Herbert Quain 94 Sunrise Version)', artist: 'Ricciardi ft. Notquietsound', label: nil, cue_time: "03:00"},
+            {name: 'Being Me', artist: 'Melchior Sultana & Janelle Pulo', label: 'Being Me', cue_time: "06:00"},
+            {name: nil, artist: nil, label: nil, cue_time: "08:00"},
+            {name: 'Dry Bridge', artist: 'Clarinets', label: nil, cue_time: "11:00"},
+            {name: 'Kingdom Adesse Versions Remix', artist: 'Maribou State ft. North Downs', label: 'Counter (Ninja)', cue_time: "15:00"},
+            {name: 'The Nanananinai', artist: 'Holmar', label: 'Get Physical', cue_time: "20:00"},
+            {name: 'Meet Me On Pluto!', artist: 'Brigade & Acud', label: 'Laut & Luise', cue_time: "25:00"},
+            {name: 'Rose Rogue (Nightmares On Wax ReRub Edit)', artist: 'St. Germain', label: 'Parlophone', cue_time: "029:00"},
+            {name: 'Misty Road', artist: 'Andre Lodemann', label: 'Best Works', cue_time: "30:00"},
+            {name: nil, artist: nil, label: nil, cue_time: "35:00"},
+            {name: 'Aurora (AM Mix)', artist: 'Guy J', label: 'Lost & Found', cue_time: "40:00"}
         ]
     },
 
