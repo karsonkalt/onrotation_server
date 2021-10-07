@@ -24,7 +24,7 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
             name: tracklist[:name],
             date_played: Date.parse(tracklist[:date_played]),
             artist: find_or_create_artist(tracklist[:artist]),
-            soundcloud_track_id: tracklist[:soundcloud_track_id],
+            youtube_url: tracklist[:youtube_url],
             creator: User.find_random,
         )
 

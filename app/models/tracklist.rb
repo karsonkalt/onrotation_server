@@ -8,7 +8,6 @@ class Tracklist < ApplicationRecord
   validates :name, presence: true
   validates :date_played, presence: true
   validates :artist, presence: true
-  validates :soundcloud_track_id, uniqueness: true
 
   def tracks
     #TODO Is there a way I can put in the cue time info on this as well?

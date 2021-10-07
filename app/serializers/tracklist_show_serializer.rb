@@ -1,5 +1,5 @@
 class TracklistShowSerializer < ActiveModel::Serializer
-  attributes :id, :name, :date_played, :created_at, :soundcloud_track_id, :number_of_identified_tracks, :number_of_tracks, :tracks
+  attributes :id, :name, :date_played, :created_at, :youtube_url, :number_of_identified_tracks, :number_of_tracks, :tracks
   
   belongs_to :artist
   belongs_to :creator, serializer: UserSerializer

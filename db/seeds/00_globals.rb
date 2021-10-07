@@ -5,7 +5,7 @@ $tracklists = [
         name: 'Live at UMF Radio',
         date_played: '2021-8-25',
         artist: 'Guy J',
-        soundcloud_track_id: 198277293,
+        youtube_url: 'https://www.youtube.com/watch?v=3H7YrkJEhqM&ab_channel=kalikande',
         tracks: [
             {name: 'Downriver', artist: 'Roger Martinez', label: 'Lost & Found', cue_time: "00:00:00"},
             {name: 'Epika', artist: 'Guy Mantzur & Roy Rosenfeld', label: 'Kompakt', cue_time: "00:05:00"},
@@ -25,7 +25,7 @@ $tracklists = [
         name: 'Live at Stella Polaris Frederiskberg, Denmark',
         date_played: '2021-8-7',
         artist: 'Guy J',
-        soundcloud_track_id: 1106205265,
+        youtube_url: 'https://www.youtube.com/embed/9yDkHaSi90k',
         tracks: [
             {name: 'Aeons (Tom Day Remix)', artist: 'Ryan Davis', label: nil, cue_time: "00:00:00"},
             {name: 'Hole in the Sun (Mr. Herbert Quain 94 Sunrise Version)', artist: 'Ricciardi ft. Notquietsound', label: nil, cue_time: "00:03:00"},

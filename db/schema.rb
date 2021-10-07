@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_08_26_011255) do
 
   create_table "artists", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_artists_on_name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_08_26_011255) do
   create_table "bookmarked_tracklists", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "tracklist_id", null: false
-    t.boolean "has_unseen_updates", default: false
+    t.boolean "has_unseen_updates", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["tracklist_id"], name: "index_bookmarked_tracklists_on_tracklist_id"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_08_26_011255) do
   create_table "bookmarked_tracks", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "track_id", null: false
-    t.boolean "has_unseen_updates", default: false
+    t.boolean "has_unseen_updates", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["track_id"], name: "index_bookmarked_tracks_on_track_id"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_08_26_011255) do
   create_table "suggested_track_identification_votes", force: :cascade do |t|
     t.integer "identification_id", null: false
     t.integer "voter_id", null: false
-    t.boolean "is_identification_correct"
+    t.boolean "is_identification_correct", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["identification_id"], name: "index_suggested_track_identification_votes_on_identification_id"
@@ -81,10 +81,10 @@ ActiveRecord::Schema.define(version: 2021_08_26_011255) do
   end
 
   create_table "tracklists", force: :cascade do |t|
-    t.string "name"
-    t.date "date_played"
+    t.string "name", null: false
+    t.date "date_played", null: false
     t.integer "artist_id", null: false
-    t.string "soundcloud_track_id"
+    t.string "youtube_url"
     t.integer "creator_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
