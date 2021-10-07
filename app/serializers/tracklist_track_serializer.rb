@@ -6,6 +6,8 @@ class TracklistTrackSerializer < ActiveModel::Serializer
   belongs_to :identifier, serializer: UserSerializer
   
   def suggested_track_identifications
-    ActiveModel::SerializableResource.new(object.suggested_track_identifications,  each_serializer: SuggestedTrackIdentificationSerializer)
+    if object.suggested_track_identifications != []
+      ActiveModel::SerializableResource.new(object.suggested_track_identifications,  each_serializer: SuggestedTrackIdentificationSerializer)
+    end
   end
 end
