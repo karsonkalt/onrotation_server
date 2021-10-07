@@ -7,17 +7,17 @@ $tracklists = [
         artist: 'Guy J',
         soundcloud_track_id: 198277293,
         tracks: [
-            {name: 'Downriver', artist: 'Roger Martinez', label: 'Lost & Found'},
-            {name: 'Epika', artist: 'Guy Mantzur & Roy Rosenfeld', label: 'Kompakt'},
-            {name: 'Small Heart Attack (Guy J Remix)', artist: 'Guy Mantzur & Sahar Z', label: 'Lost & Found'},
-            {name: 'Matador On A Lose', artist: 'Guy J', label: nil},
-            {name: 'Small Heart Attack (Agents of Time Reinterpretation', artist: 'Guy Mantzur & Sahar Z', label: 'Lost & Found'},
-            {name: 'Ego Tripping (Guy J Remix)', artist: 'Pedro Aguiar', label: 'Lost & Found'},
-            {name: 'Shaiva (Guy J Remix)', artist: 'Chab & DJ Nukem', label: nil},
-            {name: "Fool's Don't Last", artist: 'Guy J', label: 'Bedrock'},
-            {name: 'Modular Memories', artist: 'Blusoul', label: 'Lost & Found'},
-            {name: 'Vapourspace (Intro Mix)', artist: 'Sasha', label: 'Last Night On Earth'},
-            {name: 'Nirvana', artist: 'Guy J', label: 'Bedrock'}
+            {name: 'Downriver', artist: 'Roger Martinez', label: 'Lost & Found', cue_time: "00:00"},
+            {name: 'Epika', artist: 'Guy Mantzur & Roy Rosenfeld', label: 'Kompakt', cue_time: "05:00"},
+            {name: 'Small Heart Attack (Guy J Remix)', artist: 'Guy Mantzur & Sahar Z', label: 'Lost & Found', cue_time: "08:00"},
+            {name: 'Matador On A Lose', artist: 'Guy J', label: nil, cue_time: "12:00"},
+            {name: 'Small Heart Attack (Agents of Time Reinterpretation', artist: 'Guy Mantzur & Sahar Z', label: 'Lost & Found', cue_time: "15:00"},
+            {name: 'Ego Tripping (Guy J Remix)', artist: 'Pedro Aguiar', label: 'Lost & Found', cue_time: "19:00"},
+            {name: 'Shaiva (Guy J Remix)', artist: 'Chab & DJ Nukem', label: nil, cue_time: "21:00"},
+            {name: "Fool's Don't Last", artist: 'Guy J', label: 'Bedrock', cue_time: "29:00"},
+            {name: 'Modular Memories', artist: 'Blusoul', label: 'Lost & Found', cue_time: "30:00"},
+            {name: 'Vapourspace (Intro Mix)', artist: 'Sasha', label: 'Last Night On Earth', cue_time: "31:00"},
+            {name: 'Nirvana', artist: 'Guy J', label: 'Bedrock', cue_time: "35:00"}
         ]
     },
 
@@ -39,40 +39,6 @@ $tracklists = [
             {name: 'Misty Road', artist: 'Andre Lodemann', label: 'Best Works', cue_time: "30:00"},
             {name: nil, artist: nil, label: nil, cue_time: "35:00"},
             {name: 'Aurora (AM Mix)', artist: 'Guy J', label: 'Lost & Found', cue_time: "40:00"}
-        ]
-    },
-
-    {
-        name: 'Lost & Found Presents Echos 043',
-        date_played: '2021-3-25',
-        artist: 'Khen',
-        soundcloud_track_id: 999837919,
-        tracks: [
-            {name: nil, artist: nil, label: nil},
-            {name: nil, artist: 'Eli Nissan', label: nil},
-            {name: nil, artist: nil, label: nil},
-            {name: 'Fangtango', artist: 'Matthew Dekay', label: 'Maeve'},
-            {name: 'Sunflakes (Bronzed Re-Edit)', artist: 'Khen', label: 'MicroCastle'},
-            {name: 'The Charm', artist: 'Guy J', label: nil},
-            {name: "Girl's Laugh", artist: 'Serge Devant', label: 'Crosstown Rebels'},
-            {name: 'Maple', artist: 'Khen', label: 'Warung'},
-            {name: nil, artist: 'Roy Rosenfeld', label: nil},
-            {name: 'Drones', artist: 'SIS', label: nil},
-            {name: 'Napud Chamra', artist: 'K Loveski & Ewan Rill', label: 'The Soundgarden'},
-            {name: 'Endora', artist: 'Endora', label: 'All Day I Dream'},
-            {name: nil, artist: nil, label: nil},
-            {name: 'Natural Fear (Sahar Z & Khen Remix)', artist: 'Interaxxis', label: 'Plattenbank'},
-            {name: 'Embarkment', artist: 'Weird Sounding Dude', label: 'The Soundgarden'},
-            {name: 'Every Little Beat (Khen Remix)', artist: 'Above & Beyond ft. Richard Bedford', label: 'Anjunabeats'},
-            {name: nil, artist: 'Khen', label: nil},
-            {name: 'Milestone', artist: 'Guy J', label: 'Lost & Found'},
-            {name: 'Silent Summer', artist: 'Budakid', label: 'Lost & Found'},
-            {name: 'Cornfields', artist: 'Khen', label: 'Vivrant'},
-            {name: 'Stevie', artist: 'Sebastian Leger', label: 'Lost Miracle'},
-            {name: 'Orchard (Kasper Koman Remix)', artist: 'Dmitry Molosh', label: 'Mango Alley'},
-            {name: 'Waves (K Loveski Remix)', artist: 'Disalazar', label: 'Bevel'},
-            {name: nil, artist: 'Eli Nissan', label: nil},
-            {name: 'My Golden Cage (Kasper Koman 6AM Remix)', artist: 'Guy Mantzur & Khen', label: 'Bedrock'}
         ]
     }
 ]

@@ -34,13 +34,14 @@ def create_tracklists_tracks_artists_labels(tracklists, number_of_users)
         tracklist[:tracks].each_with_index do |track, idx|
 
             cur_track = find_or_create_track(track[:name], track[:artist], track[:label])
-            
+            time = Time.parse("00:" + track[:cue_time])
+                        
             previous_tracklist_track = TracklistTrack.create(
                 tracklist: cur_tracklist,
                 track: cur_track,
                 predessor_id: previous_tracklist_track ? previous_tracklist_track.id : nil,
                 identifier: User.find_random,
-                cue_time: cur_track.cue_time
+                cue_time: time
             )
 
             print "."
