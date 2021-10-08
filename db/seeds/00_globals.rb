@@ -44,7 +44,7 @@ $tracklists = [
 
     {
         name: 'Lost & Found pres. Echos 009',
-        date_played: '2020-4-17',
+        date_played: '2020-04-17',
         artist: 'Khen',
         youtube_url: 'https://www.youtube.com/watch?v=cJbR_OA1HAg&ab_channel=Lost%26Found%2FGuyJ',
         tracks: [
@@ -65,6 +65,27 @@ $tracklists = [
             {name: 'Red Sun', artist: 'Vitaly Shturm', label: 'Electronic Tree', cue_time: "01:38:10"},
             {name: 'Epidemic', artist: 'Khen', label: 'Lost & Found', cue_time: "01:41:10"},
             {name: 'Closing Doors', artist: 'Khen', label: 'Anjunadeep', cue_time: "01:47:00"}
+        ]
+    },
+
+     {
+        name: 'Tibbaa On Air, Belgium',
+        date_played: '2017-11-23',
+        artist: 'Guy J',
+        youtube_url: 'https://www.youtube.com/watch?time_continue=804&v=fvJU-4yGLQM&feature=emb_title&ab_channel=ProgressiveLegend',
+        tracks: [
+            {name: 'From Within', artist: 'Steve McGrath', label: 'Keep Thinking', cue_time: "01:06:00"},
+            {name: 'Mindcontrolla', artist: 'After Temptations', label: nil, cue_time: "01:07:30"},
+            {name: 'Fall of Inocence', artist: 'Lost Desert', label: 'Tale & Tone', cue_time: "01:18:00"},
+            {name: 'Out of a Dream', artist: 'Khen', label: 'Lost Miracle', cue_time: "01:22:00"},
+            {name: 'Backstabber', artist: 'Montori & Gespona', label: nil, cue_time: "01:30:00"},
+            {name: 'Fusion', artist: 'Steve McGrath', label: , cue_time: "01:33:05"},
+            {name: 'Feeling High', artist: 'Dennis Cruz', label: 'Suruba X', cue_time: "01:35:45"},
+            {name: 'On an Empty Page', artist: 'Budakid', label: 'Lost & Found', cue_time: "01:40:00"},
+            {name: 'Supernova', artist: 'ADZ', label: 'Global Underground', cue_time: "01:44:15"},
+            {name: 'Memories', artist: 'Budakid', label: 'Lost & Found', cue_time: "01:50:22"},
+            {name: nil, artist: nil, label: nil, cue_time: "01:54:00"},
+            {name: 'Fade Away (Guy J Remix)', artist: 'Eitan Reiter', label: 'Lost & Found', cue_time: "02:04:20"}
         ]
     }
 ]
