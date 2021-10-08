@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :notifications, only: [:index]
   end
+
+  post '/users/:id/notifications', to: 'notifications#read'
   
 end

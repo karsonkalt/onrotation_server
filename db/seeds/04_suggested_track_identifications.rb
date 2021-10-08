@@ -4,8 +4,7 @@ def create_suggested_track_identifications
     puts "Generating SuggestedTrackIdentifications\n"
 
     Track.unknown_name_unknown_artist.each do |track|
-        # TODO Change to rand() when scaling up
-        1.times do
+        if rand(5) >= 3
 
             SuggestedTrackIdentification.create(
                 identifier: User.find_random,
@@ -13,22 +12,6 @@ def create_suggested_track_identifications
                 tracklist_track: track.tracklist_tracks[0],
                 # TODO What if suggested Artist is not in the db?
                 suggested_artist: Artist.find_random,
-                suggested_name: Faker::Music::Phish.song
-            )
-
-            print "."
-        end
-    end
-
-    Track.unknown_name_known_artist.each do |track|
-        # TODO Change to rand() when scaling up
-        1.times do
-
-            SuggestedTrackIdentification.create(
-                identifier: User.find_random,
-                # TODO Can track find its tracklist tracks?
-                tracklist_track: track.tracklist_tracks[0],
-                suggested_artist: track.artist,
                 suggested_name: Faker::Music::Phish.song
             )
 

@@ -4,7 +4,7 @@ def create_bookmarked_tracks
     puts "Generating BookmarkedTracks\n"
 
     User.all.each do |user|
-        rand(4).times do
+        rand(3..4).times do
 
             loop do
                 @track = Track.find_random
@@ -14,7 +14,7 @@ def create_bookmarked_tracks
             bookmark = BookmarkedTrack.create(
                 user: user,
                 track: @track,
-                has_unseen_updates: rand(2) === 1 ? true : false
+                has_unseen_updates: true
             )
 
             print "."
@@ -29,11 +29,11 @@ def create_bookmarked_tracklists
 
     User.all.each do |user|
 
-        rand(2).times do
+        rand(3..4).times do
             BookmarkedTracklist.create(
                 user: user,
                 tracklist: Tracklist.find_random,
-                has_unseen_updates: rand(2) === 1 ? true : false
+                has_unseen_updates: true
             )
 
             print "."
