@@ -1,7 +1,12 @@
 class TracksController < ApplicationController
 
-    def show
-        @track = Track.find(params[:id])
-        render json: @track.tracklists, status: 200, each_serializer: TracklistIndexSerializer
+    def index
+        if params[:artist_id]
+            @tracks = Track.where(artist_id: params[:artist_id])
+        else
+            @tracks = Track.identified_tracks
+        end
+        render json: @tracks, status: 200
     end
+
 end
