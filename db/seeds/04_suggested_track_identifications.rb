@@ -4,7 +4,7 @@ def create_suggested_track_identifications
     puts "Generating SuggestedTrackIdentifications\n"
 
     Track.unknown_name_unknown_artist.each do |track|
-        if rand(5) >= 3
+        if rand(5) >= 2
 
             SuggestedTrackIdentification.create(
                 identifier: User.find_random,

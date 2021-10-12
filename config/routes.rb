@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :notifications, only: [:index]
+    resources :votes, only: [:index]
   end
 
   resources :artists, only: [:show] do
