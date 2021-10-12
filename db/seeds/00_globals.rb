@@ -11,7 +11,7 @@ $tracklists = [
             {name: 'Epika', artist: 'Guy Mantzur & Roy Rosenfeld', label: 'Kompakt', cue_time: "00:05:40"},
             {name: 'Small Heart Attack (Guy J Remix)', artist: 'Guy Mantzur & Sahar Z', label: 'Lost & Found', cue_time: "00:10:58"},
             {name: 'Matador On A Lose', artist: 'Guy J', label: nil, cue_time: "00:16:45"},
-            {name: 'Small Heart Attack (Agents of Time Reinterpretation', artist: 'Guy Mantzur & Sahar Z', label: 'Lost & Found', cue_time: "00:21:25"},
+            {name: 'Small Heart Attack (Agents of Time Reinterpretation)', artist: 'Guy Mantzur & Sahar Z', label: 'Lost & Found', cue_time: "00:21:25"},
             {name: 'Ego Tripping (Guy J Remix)', artist: 'Pedro Aguiar', label: 'Lost & Found', cue_time: "00:29:25"},
             {name: 'Shavia (Guy J Remix)', artist: 'Teppin', label: nil, cue_time: "00:31:52"},
             {name: "Fool's Don't Last", artist: 'Guy J', label: 'Bedrock', cue_time: "00:39:52"},
