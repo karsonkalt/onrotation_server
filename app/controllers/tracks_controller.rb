@@ -9,4 +9,9 @@ class TracksController < ApplicationController
         render json: @tracks, status: 200
     end
 
+    def show
+        @track = Track.find(params[:id])
+        render json: @track, status: 200
+    end
+
 end

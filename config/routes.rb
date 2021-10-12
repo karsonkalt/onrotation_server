@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     resources :tracklists, only: [:index]
   end
 
+  resources :tracks, only: [:show]
+
   post '/users/:id/notifications', to: 'notifications#read'
   
 end
