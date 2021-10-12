@@ -21,5 +21,7 @@ Rails.application.routes.draw do
   resources :tracks, only: [:show]
 
   post '/users/:id/notifications', to: 'notifications#read'
+
+  post '/suggested', to: "suggested#create"
   
 end
