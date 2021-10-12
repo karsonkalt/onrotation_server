@@ -67,15 +67,18 @@ class Tracklist < ApplicationRecord
     previous_tracklist_track = nil
 
     tracks.each_with_index do |track, idx|
-      if track[:name]
-          cur_track = Track.find_or_create_by(
-            name: track[:name],
-            artist: track[:artistName] ? Artist.find_or_create_by(name: track[:artist]) : nil,
-            label: track[:labelName] ? Label.find_or_create_by(name: track[:labelName]) : nil
-
-          )
+      if track[:name] != ""
+        cur_track = Track.find_or_create_by(
+          name: track[:name] != "" ? track[:name] : nil,
+          artist: (track[:artistName] != "") ? Artist.find_or_create_by(name: track[:artist]) : nil,
+          label: (track[:labelName] != "") ? Label.find_or_create_by(name: track[:labelName]) : nil
+        )
       else
-          cur_track = Track.create(name: track[:name], artist: track[:artistName], label: track[:labelName])
+        cur_track = Track.create(
+          name: track[:name] != "" ? track[:name] : nil,
+          artist: (track[:artistName] != "") ? Artist.find_or_create_by(name: track[:artist]) : nil,
+          label: (track[:labelName] != "") ? Label.find_or_create_by(name: track[:labelName]) : nil
+        )
       end
 
       time = Time.parse(track[:cueTime])
