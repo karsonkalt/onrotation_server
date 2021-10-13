@@ -13,22 +13,17 @@ OnRotation is split into two repositories, frontend and backend:
 
 Please visit the [frontend repository](https://github.com/karsonkalt/onrotation_react) for the project README and additional information.
 
-## Installation
+## Features
 
-- Dependencies
-- System dependencies
-- Configuration
-- Database creation
-- Database initialization
-- How to run the test suite
-- Services (job queues, cache servers, search engines, etc.)
-- Deployment instructions
+- User login
+- Add a tracklist, tracklist_tracks tracks, artists, and labels
+- Enter YouTube video to follow along using cue times
+- Enter identification suggestions for unknown tracks
+- Vote on track identificaitons submitted by other users
+- Bookmark tracks to receive a notification once a correct identification has been approved
+- Mark notifications as read
 
-## Usage
-
-- Ruby Version
-
-## Development
+## Run Locally
 
 To get started with OnRotation, run `bundle` from the command line to install all necessary gems. After dependencies have been installed run `rails db:reset` to run the db migrations and seed the database, then run `rails s` from the console to start serving the site to `http://localhost:3000/`. You can then log in with your own information or view a seed account by viewing the User database and selecting a User email and entering the seed password `password`.
 
